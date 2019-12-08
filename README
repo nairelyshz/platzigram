@@ -35,6 +35,24 @@ python3 manage.py runserver localhost:8080
 Agregar nueva app
 python3 manage.py startapp <nombre de la aplicacion>
 
+Conexion con MySQL
+    * intalacion de cliente para python: 
+        pip3 install pymysql
+    * importacion en el proyecto platzigram/platzigram/__init__.py
+        import pymysql
+        pymysql.install_as_MySQLdb()
+    * configuracion en settings
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'platzigram',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+Migraciones
+    python3 manage.py migrate
+
 
 Extras
 
