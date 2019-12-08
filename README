@@ -34,3 +34,9 @@ python3 manage.py runserver localhost:8080
 
 Agregar nueva app
 python3 manage.py startapp <nombre de la aplicacion>
+
+
+Extras
+
+API de photos 
+https://picsum.photos/
