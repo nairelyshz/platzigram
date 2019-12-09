@@ -14,7 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
+
 from platzigram import views as local_views
 from posts import views as posts_views
 
@@ -23,6 +26,6 @@ urlpatterns = [
     path('helloworld',local_views.helloworld),
     path('hi',local_views.hi),
     path('hi/<str:name>/<int:age>/',local_views.say_hi),
-    #Post views
     path('posts/',posts_views.list_posts)
-]
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
