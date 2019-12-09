@@ -40,4 +40,4 @@ def list_posts(request):
     #         <p><small>{user} - <i>{timestamp}</i></small></p>
     #         <figure><img src="{picture}"/></figure>""".format(**post))
     # return HttpResponse('<br>'.join(content))
-    return render(request,'feed.html',{'posts':posts})
+    return render(request,'posts/feed.html',{'posts':posts})
