@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from datetime import datetime
-import json
+from django.contrib.auth.decorators import login_required
+
 posts = [
     {
         'title': 'Mont Blanc',
@@ -32,6 +33,7 @@ posts = [
 ]
 
 # Create your views here.
+@login_required
 def list_posts(request):
     # content = []
     # for post in posts:
