@@ -41,8 +41,8 @@ def update_profile(request):
             profile.biography = data['biography']
             profile.picture = data['picture']
             profile.save()
-
-            return redirect('update')
+            url = reverse('detail', kwargs={'username': request.user.username})
+            return redirect(url)
 
     else:
         form = ProfileForm()
