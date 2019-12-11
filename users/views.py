@@ -1,6 +1,16 @@
-from django.shortcuts import render, redirect
+"""Users views."""
+
+# Django
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+
+# Exception
+from django.db.utils import IntegrityError
+
+# Models
+from django.contrib.auth.models import User
+from users.models import Profile
 
 # Create your views here.
 def login_view(request):
